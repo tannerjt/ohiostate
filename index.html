@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="buckeyesApp">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/leaflet/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="main">
+
+	<nav class="navbar navbar-default navbar-static-top" role="navigation">
+		<a class="navbar-brand" href="#">{{appTitle}}</a>
+		<ul class="nav navbar-nav">
+			<li class="active">
+				<a href="#">About</a>
+			</li>
+			<li>
+				<a href="#">Disclaimer</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="col-md-8 nopadding">
+			<div id="map">
+				
+			</div>
+		</div>
+		<div class="col-md-4 nopadding">
+			<div id="cards">
+				
+			</div>
+		</div>
+	</div>
+	<footer>TannerGeo</footer>
+
+	</body>
+	</html>
