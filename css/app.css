@@ -1,10 +1,11 @@
 footer {
-    background-color: #666666;
+    background-color: #000000;
     width: 100%;
     bottom: 0;
     position: fixed;
     color : #fff;
     padding : 5px;
+    border-top : 1px solid #ffffff;
 }
 
 #title {

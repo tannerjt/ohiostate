@@ -13,9 +13,12 @@ buckeyesApp.controller('main', function ($scope, $http) {
 	$("#mapContainer").height(getMapHeight());
 	$("#cards").height(getCardHeight());
 	var map = L.map('map');
-	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-	}).addTo(map);
+	L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+		subdomains: 'abcd',
+		minZoom: 0,
+		maxZoom: 18
+	})	.addTo(map);
 
 	// Get geojson
 	$http.get('./scripts/data/players.geojson')
@@ -59,6 +62,10 @@ buckeyesApp.controller('main', function ($scope, $http) {
 				marker.openPopup();
 			}
 		})
+	};
+
+	$scope.openDisclaimer = function () {
+		$("#myModal").modal('show');
 	}
 
 	// Continuous dynamic resize

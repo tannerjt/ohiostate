@@ -2,6 +2,10 @@
 <html lang="en" ng-app="buckeyesApp">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2014 Ohio State Buckeyes Interactive Roster Map.">
+  <meta name="author" content="TannerGeo">
   <title>OSU Player Map</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css">
@@ -15,6 +19,25 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body ng-controller="main">
+
+	<div class="modal fade" id="myModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Disclaimer</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>This website is provided “as is” without any representations or warranties, express or implied.  TannerGeo makes no representations or warranties in relation to this website or the information and materials provided on this website.</p>
+	        <p>All images were obtained from <a href="http://www.ohiostatebuckeyes.com/sports/m-footbl/mtt/osu-m-footbl-mtt.html">Ohio State's Official Roster</a></p>
+	        <p>Addresses were geocoded based on players hometown and may contain inaccuracies.</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">accept</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -32,7 +55,7 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav navbar-right">
-		    <li><a href="#">disclaimer</a></li>
+		    <li><a href="#" ng-click="openDisclaimer()">disclaimer</a></li>
 		  </ul>
 		</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
@@ -48,7 +71,7 @@
 			<div class="col-md-5 col-lg-5 col-sm-6 nopadding" id="cardContaner">
 				<div id="options">
 					<p>
-						2015 College Football Playoff National Championship
+						2015 College Football Playoff National Champions
 					</p>
 				</div>
 				<div id="cards">
@@ -81,7 +104,9 @@
 			</div>
 		</div>
 	</div>
-	<footer>Created By: <a href="http://tannergeo.com" target="_blank" class="logo">Tanner<span class='logo-color'>Geo</span></a></footer>
-
+	<footer>Created By: <a href="http://tannergeo.com" target="_blank" class="logo">Tanner<span class='logo-color'>Geo</span></a> - View on <a href="https://github.com/tannerjt/ohiostate">GitHub</a></footer>
+	<script>
+		$("#myModal").modal('show');
+	</script>
 	</body>
 </html>
