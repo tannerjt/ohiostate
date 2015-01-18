@@ -21,6 +21,7 @@ buckeyesApp.controller('main', function ($scope, $http) {
 	$http.get('./scripts/data/players.geojson')
 		.success(function(data, status, headers, config) {
 			$scope.features = data.features;
+
 			$scope.geojson = L.geoJson(data, {
 				onEachFeature : function (feature, layer) {
 					var popup = L.popup()
@@ -37,6 +38,8 @@ buckeyesApp.controller('main', function ($scope, $http) {
 
 									);
 					layer.bindPopup(popup);
+					var myIcon = L.divIcon({className: 'my-div-icon', html : "<b>" + feature.properties.num + "</b>"});
+					layer.setIcon(myIcon);
 				}
 			});
 

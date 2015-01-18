@@ -114,3 +114,18 @@ div {
 	padding-left : 30px;
 	color : #bb0000;
 }
+
+.my-div-icon {
+	background : #bb0000;
+	height : 5px;
+	width : 5px;
+	border-radius : 5px;
+	color : #ffffff;
+	font-size : 8px;
+	padding : 0;
+	text-align : center;
+}
+.my-div-icon {
+	margin: 0;
+	padding: 0;
+}
