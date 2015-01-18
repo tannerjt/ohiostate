@@ -21,8 +21,24 @@ buckeyesApp.controller('main', function ($scope, $http) {
 	$http.get('./scripts/data/players.geojson')
 		.success(function(data, status, headers, config) {
 			$scope.features = data.features;
-			console.log(data);
-			$scope.geojson = L.geoJson(data);
+			$scope.geojson = L.geoJson(data, {
+				onEachFeature : function (feature, layer) {
+					var popup = L.popup()
+								.setLatLng(layer.getLatLng())
+								.setContent("<img src='./scripts/" + feature.properties.img + "' alt='player image' style='float:left; padding-right: 4px'>" + 
+									"<b>" + feature.properties.name + "</b>"
+									+ "  plays " + feature.properties.pos + " and is #"
+									+ feature.properties.num + "."
+									+ "  His hometown is " + feature.properties.hometown + ".</p>"
+									+ "<p>At a height of " + feature.properties.ht 
+									+ " he weighs " + feature.properties.wt + " lbs"
+									+ "<p>You can find more information about " + feature.properties.name
+									+ " through the <a href='" + feature.properties.url + "' target='_blank'>Ohio State Official Website</a></p>"
+
+									);
+					layer.bindPopup(popup);
+				}
+			});
 
 			$scope.featureGroup = L.featureGroup([$scope.geojson]);
 			$scope.featureGroup.addTo(map);
@@ -32,6 +48,15 @@ buckeyesApp.controller('main', function ($scope, $http) {
 		.error(function(data, status, headers, config){
 
 		});
+
+	$scope.zoomPlayer = function (lat, lng) {
+		map.setView(new L.LatLng(lat, lng), 11);
+		$scope.geojson.eachLayer(function (marker) {
+			if(marker.feature.properties.lat == lat && marker.feature.properties.lng == lng) {
+				marker.openPopup();
+			}
+		})
+	}
 
 	// Continuous dynamic resize
 	$(window).resize(function () {

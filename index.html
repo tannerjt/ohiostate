@@ -45,9 +45,9 @@
 			</div>
 			<div class="col-md-5 col-lg-5 col-sm-6 nopadding" id="cardContaner">
 				<div id="options">
-					<form>
-						<input type="checkbox" id="extent-filter"> Filter Players By Map Extent
-					</form>
+					<p>
+						2015 College Football Playoff National Championship
+					</p>
 				</div>
 				<div id="cards">
 					<div class="flip" ng-repeat="player in features">
@@ -70,7 +70,7 @@
 									<li>Height: {{player.properties.ht}}</li>
 									<li>Weight: {{player.properties.wt}}</li>
 									<li><a href="{{player.properties.link}}" target="_blank">View Ohio State Profile Page</a><li>
-									<li><span class="btn btn-primary">View On Map</span></li>
+									<li><span class="btn btn-primary" ng-click="zoomPlayer(player.properties.lat, player.properties.lng)">View On Map</span></li>
 								</ul>
 							</div>
 						</div>
@@ -79,7 +79,7 @@
 			</div>
 		</div>
 	</div>
-	<footer>TannerGeo</footer>
+	<footer>Created By: TannerGeo</footer>
 
 	</body>
 </html>
