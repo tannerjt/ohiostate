@@ -7,15 +7,38 @@ footer {
 }
 
 #map {
-	height : 500px;
+	height : 100%;
 	width : 100%;
 	padding : 0;
 	margin : 0;
 }
 
+#cards {
+	background-color : #3C3C3C;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	text-align : center;
+	margin : 0;
+	padding : 0;
+}
+
+#options {
+	width : 100%;
+	text-align: center;
+}
+
+#options form {
+	padding: 5px 0;
+}
+
 .row {
 	margin : 0;
 	padding : 0;
+}
+
+div {
+	margin: 0;
+	padding: 0;
 }
 
 .container-fluid {
@@ -30,4 +53,46 @@ footer {
 
 .navbar {
 	margin-bottom : 0;
+}
+
+.flip {
+	-webkit-perspective: 800;
+	width: 47%;
+	margin : 5px;
+	height: 200px;
+	float : left;
+}
+.flip .card.flipped {
+	-webkit-transform: rotatex(-180deg);
+}
+.flip .card {
+	width: 100%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: 0.5s;
+}
+.flip .card .face {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	-webkit-backface-visibility: hidden ;
+	z-index: 2;
+	font-family: Georgia;
+	font-size: 10px
+	text-align: center;
+}
+
+.flip .card .front {
+	position: absolute;
+	z-index: 1;
+	background: black;
+	color: white;
+	cursor: pointer;
+}
+.flip .card .back {
+	-webkit-transform: rotatex(-180deg);
+	background: blue;
+	background: white;
+	color: black;
+	cursor: pointer;
 }
