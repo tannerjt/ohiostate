@@ -11,6 +11,8 @@
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="bower_components/leaflet/dist/leaflet.js"></script>
   <script src="app.js"></script>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body ng-controller="main">
 
@@ -24,7 +26,7 @@
 		    <span class="icon-bar"></span>
 		    <span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="#">{{appTitle}}</a>
+		  <a class="navbar-brand" href="#"><span id='title'>{{appTitle}}</span></a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,7 +56,7 @@
 						<div class="card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped">
 							<div class="face front">
 								<ul class="list-unstyled">
-									<li><span class="label label-primary">{{player.properties.pos}}</span> {{player.properties.name}}</li>
+									<li><span class="label label-primary">{{player.properties.pos}}</span> {{player.properties.name}} (#{{player.properties.num}})</li>
 									<li>{{player.properties.hometown}}</li>
 									<li><img class="player-image" src="./scripts/{{player.properties.img}}" alt="{{player.properties.name}} image"></li>
 									<li>click for more info</li>
@@ -79,7 +81,7 @@
 			</div>
 		</div>
 	</div>
-	<footer>Created By: TannerGeo</footer>
+	<footer>Created By: <a href="http://tannergeo.com" target="_blank" class="logo">Tanner<span class='logo-color'>Geo</span></a></footer>
 
 	</body>
 </html>

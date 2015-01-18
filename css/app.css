@@ -7,6 +7,10 @@ footer {
     padding : 5px;
 }
 
+#title {
+	color : #bb0000;
+}
+
 #map {
 	height : 100%;
 	width : 100%;
@@ -128,4 +132,16 @@ div {
 .my-div-icon {
 	margin: 0;
 	padding: 0;
+}
+
+.logo {
+	color : #FFFCE5;
+	font-weight : 100;
+	letter-spacing: 1.5px;
+	font-family: Helvetica;
+}
+
+.logo-color {
+	font-weight : 200;
+	color : #0477BD;
 }
