@@ -4,6 +4,7 @@ footer {
     bottom: 0;
     position: fixed;
     color : #fff;
+    padding : 5px;
 }
 
 #map {
@@ -14,7 +15,7 @@ footer {
 }
 
 #cards {
-	background-color : #3C3C3C;
+	background-color : #666666;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	text-align : center;
@@ -85,14 +86,28 @@ div {
 .flip .card .front {
 	position: absolute;
 	z-index: 1;
-	background: black;
+	background: #000000;
 	color: white;
 	cursor: pointer;
 }
 .flip .card .back {
 	-webkit-transform: rotatex(-180deg);
-	background: blue;
-	background: white;
-	color: black;
+	background: #bb0000;
+	color: #ffffff;
 	cursor: pointer;
+	padding : 10px;
+}
+
+.flip .card .back a {
+	color : #ffffff;
+}
+
+.player-image {
+	height : 120px;
+	padding : 5px;
+}
+
+.navbar-brand {
+	padding-left : 30px;
+	color : #bb0000;
 }

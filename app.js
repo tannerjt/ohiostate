@@ -1,7 +1,7 @@
 var buckeyesApp = angular.module('buckeyesApp', []);
 buckeyesApp.controller('main', function ($scope, $http) {
 	$scope.features, $scope.geojson, $scope.featureGroup;
-	$scope.appTitle = "Ohio State Buckeyes - Where the Champions Come From";
+	$scope.appTitle = "2014 Ohio State Buckeyes Roster";
 	// Initialize map
 	// and set heights dynamically
 	function getMapHeight() {

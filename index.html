@@ -56,18 +56,21 @@
 								<ul class="list-unstyled">
 									<li><span class="label label-primary">{{player.properties.pos}}</span> {{player.properties.name}}</li>
 									<li>{{player.properties.hometown}}</li>
-									<li>PHOTO</li>
+									<li><img class="player-image" src="./scripts/{{player.properties.img}}" alt="{{player.properties.name}} image"></li>
+									<li>click for more info</li>
 
 								</ul>
 							</div>
 							<div class="face back">
 								<ul class="list-unstyled">
-									<li>{{player.properties.name}}</li>
+									<li><b>{{player.properties.name}}</b></li>
 									<li>Position: {{player.properties.pos}}</li>
+									<li>Number: {{player.properties.num}}</li>
 									<li>Year: {{player.properties.yr}}</li>
 									<li>Height: {{player.properties.ht}}</li>
 									<li>Weight: {{player.properties.wt}}</li>
 									<li><a href="{{player.properties.link}}" target="_blank">View Ohio State Profile Page</a><li>
+									<li><span class="btn btn-primary">View On Map</span></li>
 								</ul>
 							</div>
 						</div>
